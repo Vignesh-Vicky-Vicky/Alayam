@@ -1,0 +1,112 @@
+.contact-container {
+  margin-top: rem(130);
+  min-height: unset;
+
+  .wrapper {
+    display: flex;
+    gap: rem(24);
+
+    div {
+      width: calc(50% - 12px);
+    }
+
+    .img-wrapper {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+    }
+
+    .form-wrapper {
+      padding: rem(50);
+      box-shadow: 0 rem(2) rem(28) rgba(0, 0, 0, 0.09);
+
+      .sub-text {
+        font-size: rem(19);
+        line-height: rem(30);
+        font-weight: 400;
+        color: #ea512e;
+        font-family: "Sacramento", cursive;
+        margin-bottom: rem(10);
+      }
+
+      .title {
+        font-size: rem(45);
+        line-height: rem(54);
+        font-weight: 700;
+        color: #1b0238;
+        font-family: "Catamaran", sans-serif;
+        margin-bottom: rem(24);
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: rem(18);
+
+        input {
+          padding: rem(24);
+          border: rem(1) solid #eeeeee;
+          border-radius: rem(10);
+          font-size: rem(16);
+          font-weight: 500;
+          font-family: "Catamaran", sans-serif;
+          outline: transparent;
+          transition: all 0.4s ease;
+
+          &:focus {
+            border: rem(1) solid #ea512e;
+          }
+
+          &::placeholder {
+            color: #7e7e7e;
+            text-transform: capitalize;
+          }
+        }
+
+        button {
+          padding: rem(14);
+          border-radius: rem(10);
+          margin-top: rem(6);
+          font-family: "Catamaran", sans-serif;
+          display: flex;
+          justify-content: center;
+        }
+
+        .message {
+          font-size: rem(16);
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+            sans-serif;
+          font-weight: 500;
+          text-align: end;
+          display: none;
+
+          &.success {
+            color: #00c24e;
+          }
+
+          &.error {
+            color: #de322e;
+          }
+        }
+      }
+    }
+
+    @media #{$tab} {
+      flex-direction: column;
+      gap: 0;
+
+      div {
+        width: 100%;
+      }
+
+      .img-wrapper {
+        max-height: rem(250);
+        overflow: hidden;
+      }
+    }
+  }
+}

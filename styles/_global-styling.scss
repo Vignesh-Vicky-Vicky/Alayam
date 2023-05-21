@@ -1,0 +1,73 @@
+// function
+@function rem($unit) {
+  $rem: ($unit / 16) + rem;
+  @return $rem;
+}
+
+// Gloabl Styling
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: rem(4);
+
+    &-thumb {
+      background: #ea512e;
+      border-radius: rem(8);
+    }
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+span,
+a {
+  display: inline-block;
+  color: unset;
+}
+
+.btn {
+  cursor: pointer;
+  background: #ea512e;
+  color: #ffffff;
+  border: none;
+  font-size: rem(16);
+  line-height: rem(24);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.container {
+  width: 100%;
+  padding: 0 rem(32);
+  min-height: calc(100vh - 80px);
+  position: relative;
+  margin-top: rem(80);
+
+  .wrapper {
+    max-width: rem(1296);
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+// Media query
+$smallDesktop: "screen and (max-width: 1020px)";
+$tab: "screen and (max-width: 900px)";
+$mobile: "screen and (max-width: 768px)";

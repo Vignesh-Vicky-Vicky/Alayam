@@ -1,0 +1,63 @@
+.gallery-container {
+  margin-top: rem(114);
+  min-height: unset;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .sub-text {
+      font-size: rem(19);
+      line-height: rem(30);
+      font-weight: 400;
+      font-family: "Sacramento", cursive;
+      color: #ea512e;
+      margin-bottom: rem(5);
+    }
+    .title {
+      font-size: rem(45);
+      line-height: rem(54);
+      font-weight: 700;
+      font-family: "Catamaran", sans-serif;
+      color: #1b0238;
+      margin-bottom: rem(35);
+    }
+
+    .img-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(24);
+
+      li {
+        width: calc(33.333333% - 16px);
+        border-radius: rem(15);
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          max-height: rem(320);
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    @media #{$tab} {
+      .img-gallery {
+        li {
+          width: calc(50% - 12px);
+        }
+      }
+    }
+
+    @media #{$mobile} {
+      .img-gallery {
+        li {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
